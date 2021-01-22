@@ -127,18 +127,18 @@ input::placeholder {
   font-size: 18px;
 }
 
-button {
+li button {
   font-size: 18px;
   margin-left: 5px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
 }
 
-button:focus {
+li button:focus {
   outline: none;
 }
 
-button:hover {
+li button:hover {
   transform: scale(1.5);
 }
 
@@ -149,4 +149,28 @@ button:hover {
 
 .weather:hover {
   color: rgb(211, 255, 255);
+}
+
+.reset,
+.todoDelete {
+  border: none;
+  border-bottom: solid white 2px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  margin: 0px 10px;
+}
+
+.reset:focus,
+.todoDelete:focus {
+  outline: none;
+}
+
+.reset:hover,
+.todoDelete:hover {
+  transform: scale(1.2);
+  color: rgb(211, 255, 255);
+  border-bottom-color: rgb(211, 255, 255);
 }
