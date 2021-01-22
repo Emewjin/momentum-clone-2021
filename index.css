@@ -165,6 +165,14 @@ li button:hover {
   margin: 5px 20px;
 }
 
+.weather-box div:last-child {
+  display: flex;
+}
+
+.js-weather {
+  margin-left: 5px;
+}
+
 .weather {
   transition: color 0.3s ease-in-out;
 }
