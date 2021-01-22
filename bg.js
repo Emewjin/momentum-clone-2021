@@ -1,4 +1,4 @@
-const main = document.querySelector("main");
+const body = document.querySelector("body");
 
 const IMG_NUMBER = 9;
 
@@ -6,7 +6,7 @@ function paintImage(number){
     const image = new Image();
     image.src = `images/${number+1}.jpg`;
     image.classList.add("bgImage");
-    main.appendChild(image);
+    body.appendChild(image);
 }
 
 function genRandom(){
