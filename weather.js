@@ -1,3 +1,4 @@
+const temp = document.querySelector(".js-temp");
 const weather = document.querySelector(".js-weather");
 const API_KEY ="0ac1ec9548649202513dcfeae5010d37";
 const COORDS = "coords";
@@ -12,7 +13,10 @@ function getWeather(lat, lon){
         .then(function(json) {
             const temperature = json.main.temp;
             const place = json.name;
-            weather.innerText = `${temperature} ℃ in ${place}`;
+            const description = json.weather[0].main;
+            console.log(description);
+            temp.innerText = `${temperature} ℃ in ${place}`;
+            weather.innerText = `${description} days`;
         });
         //then은 기본적으로 함수를 호출하지만 데이터가 완전히 들어온 다음 호출하는 것이다.
         //pending은 대기상태라는 뜻, 가져온 데이터를 처리중이라는 뜻. 이거때문에 then을 사용함.
