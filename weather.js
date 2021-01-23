@@ -14,21 +14,24 @@ function getWeather(lat, lon){
         .then(function(json) {
             const temperature = json.main.temp;
             const place = json.name;
-            const description = json.weather[0].main;
+            const main = json.weather[0].main;
             temp.innerText = `${temperature} ℃ in ${place}`;
-            weather.innerText = `${description}`;
+            weather.innerText = `${main}`;
             const weatherText = weather.innerText;
-            if (weatherText === "Mist") {
-                weatherIcon.innerText = "☁";
-            }
-            if (weatherText === "Rain") {
+            if (weatherText === "Rain" || weatherText === "Drizzle") {
                 weatherIcon.innerText = "☔";
             }
             if (weatherText === "Snow") {
                 weatherIcon.innerText = "⛄";
             }
-            if (weatherText !== "Mist" && weatherText !== "Rain" && weatherText !== "Snow") {
-                weatherIcon.innerText = "🌞";
+            if (weatherText === "Clear") {
+                weatherIcon.innerText = "";
+            }
+            if (weatherText === "Clouds") {
+                weatherIcon.innerText = "☁";
+            }
+            if (weatherText !== "Rain" && weatherText !== "Drizzle" && weatherText !== "Snow" && weatherText !== "Clear" && weatherText !== "Clouds") {
+                weatherIcon.innerText = "🌫";
             }
         });
         //then은 기본적으로 함수를 호출하지만 데이터가 완전히 들어온 다음 호출하는 것이다.
