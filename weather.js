@@ -1,8 +1,11 @@
+const mainbox = document.querySelector(".main");
 const temp = document.querySelector(".js-temp");
 const weather = document.querySelector(".js-weather");
 const weatherIcon = document.querySelector(".js-weatherIcon");
+
 const API_KEY ="0ac1ec9548649202513dcfeae5010d37";
 const COORDS = "coords";
+const SNOW = "snow";
 
 function getWeather(lat, lon){
     fetch(
@@ -23,6 +26,7 @@ function getWeather(lat, lon){
             }
             if (weatherText === "Snow") {
                 weatherIcon.innerText = "⛄";
+                mainbox.classList.add(SNOW);                
             }
             if (weatherText === "Clear") {
                 weatherIcon.innerText = "";
