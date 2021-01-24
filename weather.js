@@ -3,7 +3,7 @@ const temp = document.querySelector(".js-temp");
 const weather = document.querySelector(".js-weather");
 const weatherIcon = document.querySelector(".js-weatherIcon");
 
-const API_KEY ="0ac1ec9548649202513dcfeae5010d37";
+const API_KEY = config.SECRET_API_KEY;
 const COORDS = "coords";
 const SNOW = "snow";
 
@@ -21,6 +21,7 @@ function getWeather(lat, lon){
             temp.innerText = `${temperature} ℃ in ${place}`;
             weather.innerText = `${main}`;
             const weatherText = weather.innerText;
+            console.log(weatherText);
             if (weatherText === "Rain" || weatherText === "Drizzle") {
                 weatherIcon.innerText = "☔";
             }
@@ -29,7 +30,7 @@ function getWeather(lat, lon){
                 mainbox.classList.add(SNOW);                
             }
             if (weatherText === "Clear") {
-                weatherIcon.innerText = "";
+                weatherIcon.innerText = "☀";
             }
             if (weatherText === "Clouds") {
                 weatherIcon.innerText = "☁";
