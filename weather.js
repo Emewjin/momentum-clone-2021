@@ -30,7 +30,7 @@ function getWeather(lat, lon){
                 mainbox.classList.add(SNOW);                
             }
             if (weatherText === "Clear") {
-                weatherIcon.innerText = "☀";
+                weatherIcon.innerText = "🌞";
             }
             if (weatherText === "Clouds") {
                 weatherIcon.innerText = "☁";
